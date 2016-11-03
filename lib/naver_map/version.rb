@@ -1,3 +1,3 @@
-module NaverMap
-  VERSION = "0.1.0"
+class NaverMap
+  VERSION = '0.1.0'
 end
