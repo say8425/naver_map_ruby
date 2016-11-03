@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     naver_map (0.1.0)
-      rest-client (~> 2.0.0)
+      rest-client (~> 2.0.0, >= 2.0.0)
 
 GEM
   remote: https://rubygems.org/
