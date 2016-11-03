@@ -6,8 +6,8 @@ require 'naver_map/version'
 Gem::Specification.new do |spec|
   spec.name          = "naver_map"
   spec.version       = NaverMap::VERSION
-  spec.authors       = ["Penguin"]
-  spec.email         = ["say8425@gmail.com"]
+  spec.author        = "Penguin"
+  spec.email         = "say8425@gmail.com"
 
   spec.summary       = "Generating Naver map API"
   spec.description   = "Naver support map API. But we don't have any ruby gem for this API.
