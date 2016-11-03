@@ -10,7 +10,7 @@ class NaverMap
     @client_secret = client_secret
   end
 
-  def coordinates_to_address(address)
+  def address_to_coordinates(address)
     begin
       url = 'https://openapi.naver.com/v1/map/geocode'
       response = RestClient.get(url, params: { query: address }, 'X-Naver-Client-Id': @client_id,
