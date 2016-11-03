@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = "Generating Naver map API"
   spec.description   = "Naver support map API. But we don't have any ruby gem for this API.
                         So You can use it with this gem comfortable."
-  spec.homepage      = "http://github.com/say8425/naver_map"
+  spec.homepage      = "https://github.com/say8425/naver_map_ruby"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
