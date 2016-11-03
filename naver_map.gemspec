@@ -9,9 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Penguin"]
   spec.email         = ["say8425@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Generating Naver map API"
+  spec.description   = "Naver support map API. But we don't have any ruby gem for this API.
+                        So You can use it with this gem comfortable."
+  spec.homepage      = "http://github.com/say8425/naver_map"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
