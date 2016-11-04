@@ -1,5 +1,7 @@
 # NaverMap
 
+[![Gem Version](https://badge.fury.io/rb/naver_map.svg)](https://badge.fury.io/rb/naver_map)
+
 This is ruby gem for using Naver Map API.
 
 ## Installation
