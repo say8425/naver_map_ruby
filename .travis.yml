@@ -1,4 +1,6 @@
 language: ruby
+rvm:
+ - 2.2
 bundler_args: --jobs=2
 script: bundle exec rake test
 cache: bundler
