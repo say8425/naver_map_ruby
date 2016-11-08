@@ -4,3 +4,6 @@ rvm:
 bundler_args: --jobs=2
 script: bundle exec rake test
 cache: bundler
+before_install:
+ - gem update bundler
+ 
