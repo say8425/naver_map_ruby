@@ -31,14 +31,29 @@ city_hall = NaverMap.new('input your client id', 'input your client secret')
 
 First you need to confirm your Naver API client id and client secret key. You can confirm it at [Naver Developer Application page](https://developers.naver.com/appinfo).
 Then you can initialize `naver_map` with your client id and client secret key.
+
+### Get coordinates with address 
  
 ```ruby
 city_hall.address_to_coordinates('서울특별시 중구 세종대로 110 서울특별시청')
 => [{:x=>126.9783882, :y=>37.5666103}] 
 ```
 
-Current version of naver_map gem can only show coordinates through address.
+The return value is array, cuz coordinates can be multiple values.
+But we are plan to when return is single value then make return is not array.
+
+### Getting address with coordinates
+
+```ruby
+city_hall.coordinates_to_address(126.9783882, 37.5666103)
+=> ["서울특별시 중구 태평로1가 31", "서울특별시 중구 세종대로 110 서울시청"]
+```
+
+Address also can be multiple values. So value is array.
 
 ## Contributing
 
 Bug reports and pull requests are welcome.
+
+## License
+MIT
