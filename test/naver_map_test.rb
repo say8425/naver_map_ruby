@@ -7,11 +7,15 @@ class TestNaverMap < Minitest::Test
   end
 
   def test_address_to_coordinates
-    assert_equal([{:x=>127.0452879, :y=>37.5454765}], @naver_map.address_to_coordinates('서울특별시 성동구 왕십리로 88 노벨빌딩 4층'),
+    assert_equal({:x=>127.0452879, :y=>37.5454765}, @naver_map.address_to_coordinates('서울특별시 성동구 왕십리로 88 노벨빌딩 4층'),
                  'Address is not well converted in coordinates')
   end
 
-  def test_cordinates_to_address
-    assert_equal ["경기도 성남시 분당구 정자동 257-1"], @naver_map.coordinates_to_address("127.1141382", "37.3599968")
+  def test_coordinates_to_address
+    assert_equal "경기도 성남시 분당구 정자동 257-1", @naver_map.coordinates_to_address("127.1141382", "37.3599968")
+  end
+
+  def test_return_array_on_multiple_value
+    skip
   end
 end
