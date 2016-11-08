@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    naver_map (0.1.1)
+    naver_map (0.2.0)
 
 GEM
   remote: https://rubygems.org/
