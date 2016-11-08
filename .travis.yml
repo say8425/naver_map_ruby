@@ -1,0 +1,4 @@
+language: ruby
+bundler_args: --jobs=2
+script: bundle exec rake test
+cache: bundler
