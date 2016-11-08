@@ -15,12 +15,12 @@ class NaverMap
 
   def address_to_coordinates(address)
     response = query(GEOCODE_REQUEST_URL, address).body
-    extract_result(response, 'point')
+    extract_result(response, :point) # Second argument should be a symbol
   end
 
   def coordinates_to_address(axis_x, axis_y)
     response = query(REVERSE_GEOCODE_URL, axis_x, axis_y).body
-    extract_result(response, 'address')
+    extract_result(response, :address)
   end
 
   def to_s
@@ -48,7 +48,7 @@ class NaverMap
   def extract_result(content, result_type)
     result = get_result(content)[:items]
 
-    return result.first[result_type.to_sym] unless result.size > 1
-    result.map { |element| element[result_type.to_sym] }
+    return result.first[result_type] unless result.size > 1
+    result.map { |element| element[result_type] }
   end
 end
