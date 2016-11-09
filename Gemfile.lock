@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    naver_map (0.2.1)
-      rest-client (~> 2.0.0)
+    naver_map (0.2.2)
+      rest-client (~> 2.0, >= 2.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -30,9 +30,9 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.13)
-  minitest (~> 5.8.3)
+  minitest (~> 5.8, >= 5.8.3)
   naver_map!
-  rake (~> 11.2.2)
+  rake (~> 11.2, >= 11.2.2)
 
 BUNDLED WITH
    1.13.6
