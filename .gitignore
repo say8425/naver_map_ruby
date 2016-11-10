@@ -103,3 +103,9 @@ icon.png
 # ctags
 tags
 .tags
+
+# Vim swap file
+*.swp
+
+# byebug history
+.byebug_history

@@ -15,17 +15,27 @@ class TestNaverMap < Minitest::Test
   end
 
   def test_coordinates_to_address
-    assert_equal "경기도 성남시 분당구 정자동 257-1",
-                 @naver_map.coordinates_to_address("127.1141382", "37.3599968"),
+    assert_equal '경기도 성남시 분당구 정자동 257-1',
+                 @naver_map.coordinates_to_address('127.1141382', '37.3599968'),
                  'The address has to be string'
   end
 
   def test_return_array_on_multiple_value
     # TODO: Find another example for address_to_coordinates method.
-    expected_result = ["경기도 성남시 분당구 정자동 178-1",
-                       "경기도 성남시 분당구 불정로 6 그린팩토리"]
+    expected_result = ['경기도 성남시 분당구 정자동 178-1',
+                       '경기도 성남시 분당구 불정로 6 그린팩토리']
     assert_equal expected_result,
-                 @naver_map.coordinates_to_address("127.1052133", "37.3595316"),
-                 "The results should be array if it has more than one item"
+                 @naver_map.coordinates_to_address('127.1052133', '37.3595316'),
+                 'The results should be array if it has more than one item'
+  end
+
+  def test_print_errors
+    wrong_input = @naver_map.address_to_coordinates('경기도 코엑스')
+    assert wrong_input.keys == [:errorMessage, :errorCode]
+  end
+
+  def test_raising_unknown_error
+    # TODO: Introduce appropriate conditions raising error
+    skip
   end
 end
