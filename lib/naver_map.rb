@@ -38,17 +38,23 @@ class NaverMap
   def query(url, *params)
     request_to_naver(url, params)
   rescue RestClient::ExceptionWithResponse => err
-    err.response.body
+    err.response
   end
 
-  def get_result(body)
-    JSON.parse(body, symbolize_names: true)[:result]
+  def render_json(body)
+    JSON.parse(body, symbolize_names: true)
   end
 
   def extract_result(content, result_type)
-    result = get_result(content)[:items]
+    result_json  = render_json(content)
 
-    return result.first[result_type] unless result.size > 1
-    result.map { |element| element[result_type] }
+    if result_json[:result]
+      result_items = result_json[:result][:items]
+
+      return result_items.first[result_type] unless result_items.size > 1
+      result_items.map { |item| item[result_type] }
+    else
+      result_json
+    end
   end
 end
