@@ -33,9 +33,12 @@ class NaverMap
   private
 
   def validate!
-    valid_keys = client_id.is_a?(String) && client_id.length == 20 &&
-                  client_secret.is_a?(String) && client_secret.length == 10
-    raise InvalidKeysError.new(client_id, client_secret) unless valid_keys
+    raise InvalidKeysError.new(client_id, client_secret) unless valid_keys?
+  end
+
+  def valid_keys?
+    client_id.is_a?(String) && client_id.length == 20 &&
+      client_secret.is_a?(String) && client_secret.length == 10
   end
 
   def request_to_naver(url, *params)
