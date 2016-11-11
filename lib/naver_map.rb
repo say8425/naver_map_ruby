@@ -1,6 +1,7 @@
-require 'naver_map/version'
 require 'rest-client'
 require 'json'
+require_relative './naver_map/version'
+require_relative './invalid_keys_error'
 
 class NaverMap
   attr_reader :client_id, :client_secret
@@ -11,6 +12,8 @@ class NaverMap
   def initialize(client_id, client_secret)
     @client_id = client_id
     @client_secret = client_secret
+
+    validate!
   end
 
   def address_to_coordinates(address)
@@ -28,6 +31,12 @@ class NaverMap
   end
 
   private
+
+  def validate!
+    valid_keys = client_id.is_a?(String) && client_id.length == 20 &&
+                  client_secret.is_a?(String) && client_secret.length == 10
+    raise InvalidKeysError.new(client_id, client_secret) unless valid_keys
+  end
 
   def request_to_naver(url, *params)
     RestClient.get(url, params: { query: params.join(',') },
