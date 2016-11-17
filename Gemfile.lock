@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    naver_map (0.2.2)
+    naver_map (0.2.3)
       rest-client (~> 2.0, >= 2.0.0)
 
 GEM
