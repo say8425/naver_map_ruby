@@ -1,3 +1,5 @@
+* 0.2.3
+    * invalid key에 대한 에러 메시지 추가
 * 0.2.2
     * 결과값이 1개일시 array로 반환 안함
     * gemspec dependency warning 해결
