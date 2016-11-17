@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'naver_map'
+require_relative '../lib/invalid_keys_error'
 
 class TestNaverMap < Minitest::Test
   def setup
@@ -27,6 +28,14 @@ class TestNaverMap < Minitest::Test
     assert_equal expected_result,
                  @naver_map.coordinates_to_address('127.1052133', '37.3595316'),
                  'The results should be array if it has more than one item'
+  end
+
+  def test_invalid_keys
+    wrong_client_id = 1234568
+    wrong_client_secret = '9inechars'
+    assert_raises InvalidKeysError do
+      NaverMap.new(wrong_client_id, wrong_client_secret)
+    end
   end
 
   def test_print_errors
