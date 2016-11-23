@@ -1,10 +1,11 @@
 require 'minitest/autorun'
 require 'naver_map'
+require 'dotenv'; Dotenv.load '../.travis.yml'
 require_relative '../lib/invalid_keys_error'
 
 class TestNaverMap < Minitest::Test
   def setup
-    @naver_map = NaverMap.new('9t01a7LRijYCbU1PEOlR', 'VY9dCKWgEa')
+    @naver_map = NaverMap.new(ENV['NAVER_MAP_CLIENT_ID'], ENV['NAVER_MAP_CLIENT_SECRET'])
   end
 
   def test_address_to_coordinates
