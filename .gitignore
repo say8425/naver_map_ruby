@@ -81,6 +81,7 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Source tree icon
 icon.png
 
 # ctags
