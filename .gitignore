@@ -15,6 +15,11 @@
 # Used by dotenv library to load environment variables.
 # .env
 
+## Exclude Gemfile.lock
+# http://stackoverflow.com/questions/4151495/should-gemfile-lock-be-included-in-gitignore
+
+Gemfile.lock
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
